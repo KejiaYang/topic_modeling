@@ -157,11 +157,13 @@ def main():
 	test_corpus = vectorize(test_dictionary, test_docs)
 
 	# Write predicted results
+	i = 0
 	with open('../results/product_description_complete.tsv', 'wt') as tsvfile:
     	writer = csv.writer(tsvfile, delimiter='\t')
     	writer.writerow(["asin", "topic_distribution"])
     	for c in test_corpus:
         	writer.writerow([asin_list[i], model[c]])
+        	i += 1
 
 
     # Visualize the topics (the following code can only be run on Notebook)
