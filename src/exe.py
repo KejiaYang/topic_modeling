@@ -34,6 +34,7 @@ def read_content(filename):
 			temp = ''
 			for ele in split_str(row['description']):
 				if len(ele) != 0:
+					ele = ele.lower()
 					temp = temp + ' ' + remove_stopwords(ele)
 					docs.append(remove_stopwords(ele))
 			test_docs.append(temp)
